@@ -1,0 +1,68 @@
+---
+import { missionariesData } from '../../data/missionaries';
+import { FileText, Heart, MapPin } from 'lucide-react';
+---
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {missionariesData.missionaries.map((missionary) => (
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+                    
+                    {/* Imagen */}
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors z-10"></div>
+                        <img 
+                            src={missionary.image} 
+                            alt={missionary.names} 
+                            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                        
+                        {/* Overlay Gradiente para que el texto resalte si quisieras ponerlo encima, 
+                            pero en este diseño lo pondremos abajo limpio */}
+                    </div>
+
+                    {/* Contenido */}
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-start gap-2 mb-2">
+                            <MapPin className="w-4 h-4 text-blue-500 mt-1 shrink-0" />
+                            <span class="text-xs font-bold uppercase tracking-widest text-blue-600">
+                                {missionary.role}
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 font-serif mb-4">
+                            {missionary.names}
+                        </h3>
+
+                        <p class="text-slate-600 mb-8 leading-relaxed flex-grow">
+                            {missionary.bio}
+                        </p>
+
+                        {/* Botones de Acción */}
+                        <div class="grid grid-cols-2 gap-4 mt-auto pt-6 border-t border-slate-100">
+                            <a 
+                                href={missionary.newsletterLink} 
+                                target="_blank"
+                                class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                            >
+                                <FileText size={16} />
+                                Newsletter
+                            </a>
+
+                            <a 
+                                href={missionary.donateLink} 
+                                class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5"
+                            >
+                                <Heart size={16} fill="currentColor" />
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+    </div>
+</section>

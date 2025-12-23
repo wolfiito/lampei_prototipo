@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import TripsGrid from '../components/trips/TripsGrid.astro';
+import { tripsPageData } from '../data/trips';
+---
+
+<Layout title="Previous Trips | Lampei International Ministries">
+    <main>
+        <PageHeader 
+            title={tripsPageData.title} 
+            subtitle={tripsPageData.subtitle} 
+            backgroundImage={tripsPageData.headerImage}
+        />
+
+        <TripsGrid />
+        
+    </main>
+</Layout>

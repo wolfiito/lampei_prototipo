@@ -1,0 +1,84 @@
+---
+import { ministriesData } from '../../data/ministries';
+import { Map, Users, BookOpen, Music, ShoppingBag, ArrowRight, Lock } from 'lucide-react';
+
+// Mapeo de iconos
+const iconMap = {
+    map: Map,
+    users: Users,
+    book: BookOpen,
+    music: Music,
+    shopping: ShoppingBag
+};
+---
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {ministriesData.items.map((item) => {
+                const IconComponent = iconMap[item.icon as keyof typeof iconMap] || Users;
+
+                return (
+                    <div class={`group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 flex flex-col h-full relative ${item.isComingSoon ? 'opacity-90' : 'hover:shadow-2xl transition-all duration-300'}`}>
+                        
+                        {/* Imagen Header */}
+                        <div class="relative h-56 overflow-hidden">
+                            {/* Overlay oscuro si es Coming Soon */}
+                            {item.isComingSoon && (
+                                <div class="absolute inset-0 bg-slate-900/60 z-20 flex items-center justify-center backdrop-blur-[2px]">
+                                    <span class="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-bold border border-white/30 backdrop-blur-md">
+                                        Launch 2026
+                                    </span>
+                                </div>
+                            )}
+                            
+                            {/* Overlay hover normal */}
+                            {!item.isComingSoon && (
+                                <div class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/10 transition-colors z-10"></div>
+                            )}
+
+                            <img 
+                                src={item.image} 
+                                alt={item.title} 
+                                class={`w-full h-full object-cover transition-transform duration-700 ${item.isComingSoon ? 'grayscale' : 'group-hover:scale-110'}`}
+                            />
+                        </div>
+
+                        {/* Icono Flotante */}
+                        <div class="absolute top-48 left-6 w-14 h-14 bg-white rounded-xl shadow-lg flex items-center justify-center z-20">
+                            <IconComponent className={`w-7 h-7 ${item.isComingSoon ? 'text-slate-400' : 'text-blue-600'}`} />
+                        </div>
+
+                        {/* Contenido */}
+                        <div class="p-8 pt-10 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold text-slate-900 font-serif mb-3">{item.title}</h3>
+                            <p class="text-slate-600 mb-8 leading-relaxed flex-grow">
+                                {item.description}
+                            </p>
+
+                            {/* Botón */}
+                            <div class="mt-auto">
+                                {item.isComingSoon ? (
+                                    <button disabled class="flex items-center gap-2 text-slate-400 font-bold text-sm cursor-not-allowed uppercase tracking-wider">
+                                        <Lock size={16} />
+                                        Coming Soon
+                                    </button>
+                                ) : (
+                                    <a 
+                                        href={item.link} 
+                                        class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-wider group-hover:gap-3 transition-all"
+                                    >
+                                        {item.buttonText}
+                                        <ArrowRight size={16} />
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import DonateOptions from '../components/donate/DonateOptions.astro';
+import { donateData } from '../data/donate';
+---
+
+<Layout title="Donate | Lampei International Ministries">
+    <main>
+        <PageHeader 
+            title={donateData.title} 
+            subtitle={donateData.subtitle} 
+            backgroundImage={donateData.headerImage}
+        />
+
+        <DonateOptions />
+        
+    </main>
+</Layout>

@@ -1,0 +1,56 @@
+---
+import { doctrineData } from '../../data/doctrine';
+import { BookOpen, Users, Gift, Flame, Church, CloudSun, Globe, Cross, Layers } from 'lucide-react';
+
+// Mapeo de iconos (String -> Componente Lucide)
+const iconMap = {
+    book: BookOpen,
+    trinity: Layers, // Layers representa las 3 partes unidas
+    cross: Cross,
+    gift: Gift,
+    users: Users,
+    flame: Flame,
+    church: Church,
+    cloud: CloudSun,
+    globe: Globe
+};
+---
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-bold font-serif text-slate-900 mb-4">What We Believe</h2>
+            <p class="text-lg text-slate-600">
+                Our faith is anchored in Scripture. Here is a summary of our core doctrinal beliefs.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            {doctrineData.beliefs.map((belief) => {
+                // Buscamos el icono, si no existe usamos 'BookOpen' por defecto
+                const IconComponent = iconMap[belief.icon as keyof typeof iconMap] || BookOpen;
+
+                return (
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 flex gap-6 items-start">
+                        
+                        <div class="shrink-0 w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                            <IconComponent className="w-6 h-6" />
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">
+                                {belief.title}
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                                {belief.content}
+                            </p>
+                        </div>
+                        
+                    </div>
+                );
+            })}
+        </div>
+
+    </div>
+</section>

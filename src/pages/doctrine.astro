@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import BeliefsGrid from '../components/doctrine/BeliefsGrid.astro';
+import { doctrineData } from '../data/doctrine';
+---
+
+<Layout title="Doctrine | Lampei International Ministries">
+    <main>
+        <PageHeader 
+            title={doctrineData.title} 
+            subtitle={doctrineData.subtitle} 
+            backgroundImage={doctrineData.headerImage}
+        />
+
+        <BeliefsGrid />
+    </main>
+</Layout>

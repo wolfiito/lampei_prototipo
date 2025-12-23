@@ -1,0 +1,93 @@
+---
+import { donateData } from '../../data/donate';
+import { CreditCard, Mail, CheckCircle2, Church, GraduationCap, Users, ShieldCheck } from 'lucide-react';
+
+const icons = {
+    church: Church,
+    school: GraduationCap,
+    users: Users
+};
+---
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold font-serif text-slate-900 mb-6">{donateData.intro.title}</h2>
+            <p class="text-lg text-slate-600 mb-12">{donateData.intro.description}</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                {donateData.impactAreas.map(area => {
+                    const Icon = icons[area.icon as keyof typeof icons];
+                    return (
+                        <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                                <Icon size={20} />
+                            </div>
+                            <h3 class="font-bold text-slate-900 mb-2">{area.title}</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">{area.description}</p>
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+
+        <div class="border-t border-slate-200 my-16"></div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <div class="bg-blue-600 rounded-3xl p-8 text-white shadow-xl shadow-blue-900/20 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-white/10 transition-colors"></div>
+                
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6">
+                        <CreditCard className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold font-serif mb-2">{donateData.methods.online.title}</h3>
+                    <p class="text-blue-100 mb-8 leading-relaxed">
+                        {donateData.methods.online.description}
+                    </p>
+
+                    <div class="mt-auto">
+                        <a href={donateData.methods.online.link} class="btn bg-white text-blue-600 hover:bg-blue-50 border-none w-full font-bold shadow-lg text-lg h-14 rounded-xl">
+                            {donateData.methods.online.buttonText}
+                        </a>
+                        
+                        <div class="flex items-center justify-center gap-2 mt-6 text-blue-200 text-xs font-medium">
+                            <ShieldCheck size={14} />
+                            {donateData.methods.online.legal}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 shadow-sm flex flex-col h-full">
+                <div class="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mb-6">
+                    <Mail className="w-8 h-8 text-slate-600" />
+                </div>
+
+                <h3 class="text-2xl font-bold font-serif text-slate-900 mb-2">{donateData.methods.mail.title}</h3>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    {donateData.methods.mail.description}
+                </p>
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mt-auto">
+                    <p class="text-xs text-slate-400 uppercase font-bold tracking-widest mb-2">Make checks payable to:</p>
+                    <div class="font-serif text-slate-900 text-lg space-y-1">
+                        {donateData.methods.mail.address.map(line => (
+                            <div class="block">{line}</div>
+                        ))}
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center gap-2 mt-6 text-slate-400 text-xs font-medium">
+                    <ShieldCheck size={14} />
+                    {donateData.methods.mail.legal}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,122 @@
+---
+import { Facebook, Instagram, Youtube, Mail, MapPin, ArrowRight } from 'lucide-react';
+
+const currentYear = new Date().getFullYear();
+
+const links = {
+  about: [
+    { label: "Our Story", href: "/history" },
+    { label: "Leadership Team", href: "/leadership-team" },
+    { label: "Statement of Faith", href: "/doctrine" },
+    { label: "Financial Integrity", href: "/financials" },
+  ],
+  ministries: [
+    { label: "Church Planting", href: "/our-churches" },
+    { label: "Missionary Training", href: "/training" },
+    { label: "Short-term Trips", href: "/potential-trips" },
+    { label: "Education", href: "/education" },
+  ],
+  legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Cookie Policy", href: "/cookies" },
+  ]
+};
+---
+
+<footer class="bg-slate-900 text-slate-300 border-t border-slate-800 font-sans">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      
+      <div class="space-y-6">
+        <a href="/" class="inline-block">
+          <span class="font-serif font-extrabold text-2xl tracking-tighter text-white">
+            LAMPEI<span class="text-blue-500">.</span>
+          </span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Reaching the nations with the light of the Gospel through church planting, leadership development, and biblical education.
+        </p>
+        
+        <div class="flex gap-4 pt-2">
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all">
+            <Facebook size={18} />
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:text-white transition-all">
+            <Instagram size={18} />
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition-all">
+            <Youtube size={18} />
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold font-serif mb-6">About Us</h3>
+        <ul class="space-y-3 text-sm">
+          {links.about.map(link => (
+            <li>
+              <a href={link.href} class="hover:text-blue-400 transition-colors flex items-center gap-2 group">
+                <span class="w-0 overflow-hidden group-hover:w-2 transition-all duration-300">›</span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold font-serif mb-6">Ministries</h3>
+        <ul class="space-y-3 text-sm">
+          {links.ministries.map(link => (
+            <li>
+              <a href={link.href} class="hover:text-blue-400 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold font-serif mb-6">Stay Connected</h3>
+        <p class="text-slate-400 text-sm mb-4">
+          Join our newsletter to receive updates on missions and prayer requests.
+        </p>
+        
+        <form class="flex flex-col gap-3">
+          <input 
+            type="email" 
+            placeholder="Enter your email" 
+            class="input input-bordered bg-slate-800 border-slate-700 text-white focus:border-blue-500 focus:outline-none w-full h-10 text-sm"
+          />
+          <button class="btn btn-primary bg-blue-600 hover:bg-blue-700 border-none text-white h-10 min-h-0 uppercase text-xs font-bold tracking-wider">
+            Subscribe
+          </button>
+        </form>
+
+        <div class="mt-8 space-y-2 text-sm text-slate-400">
+            <div class="flex items-start gap-3">
+                <MapPin size={16} class="mt-1 text-blue-500 shrink-0" />
+                <span>Morelia, Michoacán, México</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <Mail size={16} class="text-blue-500 shrink-0" />
+                <a href="mailto:contact@lampei.org" class="hover:text-white">contact@lampei.org</a>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>&copy; {currentYear} Lampei International Ministries. All rights reserved.</p>
+      <div class="flex gap-6">
+        {links.legal.map(link => (
+            <a href={link.href} class="hover:text-white transition-colors">{link.label}</a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,88 @@
+---
+import { tripsPageData } from '../../data/trips';
+import { MapPin, Users, CheckCircle2 } from 'lucide-react';
+import VideoPlayer from '../common/VideoPlayer.jsx';
+import { Image } from 'astro:assets';
+---
+
+<section class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="space-y-12">
+            {tripsPageData.trips.map((trip) => (
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 flex flex-col md:flex-row">
+                    
+                    <div class="md:w-2/5 h-64 md:h-auto relative bg-slate-100">
+                        
+                        {trip.videoId ? (
+                            /* CASO 1: ES VIDEO (Usamos el Player Lite) */
+                            <div class="h-full w-full flex flex-col justify-center">
+                                <VideoPlayer 
+                                    client:visible 
+                                    id={trip.videoId} 
+                                    title={trip.location}
+                                    poster={trip.image} 
+                                />
+                            </div>
+                        ) : (
+                            /* CASO 2: ES IMAGEN (Usamos Image de Astro optimizada) */
+                            <div class="h-full w-full relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                                
+                                <Image 
+                                    src={trip.image} 
+                                    alt={trip.location}
+                                    width={800}
+                                    height={600}
+                                    format="webp"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                />
+                                
+                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-lg z-20">
+                                    <MapPin className="w-4 h-4 text-blue-600" />
+                                    <span class="text-xs font-bold uppercase text-slate-800 tracking-wider">
+                                        {trip.location}
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+
+                    </div>
+
+                    <div class="p-8 md:p-10 md:w-3/5 flex flex-col justify-center">
+                        
+                        <div class="flex items-center gap-2 mb-3 text-slate-500 text-sm font-medium">
+                            <Users className="w-4 h-4 text-blue-400" />
+                            <span>Team: <span class="text-slate-700">{trip.team}</span></span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 font-serif mb-4">
+                            Mission to {trip.location.split(',')[0]}
+                        </h3>
+
+                        <p class="text-slate-600 leading-relaxed mb-8">
+                            {trip.description}
+                        </p>
+
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+                                Key Activities
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                {trip.activities.map(activity => (
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">
+                                        <CheckCircle2 className="w-3 h-3" />
+                                        {activity}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            ))}
+        </div>
+
+    </div>
+</section>

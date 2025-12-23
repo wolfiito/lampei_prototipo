@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+// Nota: Navbar y Footer ya deberían estar en tu Layout.astro, si no, impórtalos aquí.
+import PageHeader from '../components/common/PageHeader.astro';
+import Timeline from '../components/history/Timeline.astro';
+import { historyData } from '../data/history';
+import Meaning from '../components/history/Meaning.astro';
+---
+
+<Layout title="Our History | Lampei International Ministries">
+    <main>
+        <Meaning />
+        <Timeline />
+    </main>
+</Layout>

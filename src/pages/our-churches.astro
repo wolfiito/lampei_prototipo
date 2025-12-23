@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import ChurchesGrid from '../components/churches/ChurchesGrid.astro';
+import { churchesPageData } from '../data/churches';
+---
+
+<Layout title="Our Churches | Lampei International Ministries">
+    <main>
+        <PageHeader 
+            title={churchesPageData.title} 
+            subtitle={churchesPageData.subtitle} 
+            backgroundImage={churchesPageData.headerImage}
+        />
+
+        <ChurchesGrid />
+    </main>
+</Layout>

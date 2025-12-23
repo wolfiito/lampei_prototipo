@@ -1,0 +1,44 @@
+---
+// src/layouts/Layout.astro
+import '@fontsource/inter';
+import '@fontsource/merriweather';
+import Footer from '../components/layout/Footer.astro';
+import Navbar from '../components/layout/Navbar.astro';
+// 1. IMPORTAMOS EL ROUTER DE CLIENTE
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Lampei Ministries" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+		<Navbar />
+		<slot />
+		<Footer />
+	</body>
+	
+</html>
+
+<style is:global>
+	:root {
+		--font-sans: 'Inter', sans-serif;
+		--font-serif: 'Merriweather', serif;
+	}
+    /* Aplicamos la fuente serif solo a los títulos */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-serif);
+    }
+</style>
