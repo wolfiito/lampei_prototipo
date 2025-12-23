@@ -1,19 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/common/PageHeader.astro';
-import DonateOptions from '../components/donate/DonateOptions.astro';
-import { donateData } from '../data/donate';
+import DonationWidget from '../components/interactive/DonationWidget.jsx';
+import { ShieldCheck, HeartHandshake, Landmark } from 'lucide-react';
 ---
 
-<Layout title="Donate | Lampei International Ministries">
-    <main>
-        <PageHeader 
-            title={donateData.title} 
-            subtitle={donateData.subtitle} 
-            backgroundImage={donateData.headerImage}
-        />
+<Layout title="Donate - Lampei International Ministries">
+  <PageHeader 
+    title="Support the Mission" 
+    subtitle="Your generosity enables us to reach the nations with the light of the Gospel."
+  />
 
-        <DonateOptions />
+  <section class="py-20 px-6 bg-slate-50 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-slate-900 to-slate-50"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
         
-    </main>
+        <div class="space-y-12">
+          <div>
+            <h2 class="text-4xl font-bold text-slate-900 mb-6 font-serif">Why Partner with Us?</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+              When you give to Lampei, you're not just donating; you're investing in eternity. 
+              We are committed to financial integrity and maximum impact on the field.
+            </p>
+          </div>
+
+          <div class="grid gap-6">
+            <div class="flex gap-5 p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+              <div class="bg-blue-50 p-3 rounded-2xl h-fit text-blue-600"><Landmark /></div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-1">Financial Stewardship</h4>
+                <p class="text-sm text-slate-500">Every dollar is carefully managed to ensure it reaches its intended purpose in the mission field.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-5 p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+              <div class="bg-amber-50 p-3 rounded-2xl h-fit text-amber-600"><HeartHandshake /></div>
+              <div>
+                <h4 class="font-bold text-slate-900 mb-1">Direct Impact</h4>
+                <p class="text-sm text-slate-500">Your gifts directly support church planters, local leaders, and community development projects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:-mt-40">
+          <DonationWidget client:load />
+        </div>
+
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -1,58 +1,63 @@
 ---
+// src/components/home/Hero.astro
 import { heroData } from '../../data/home';
 import { Image } from 'astro:assets';
 ---
 
-<section class="relative w-full h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden bg-slate-900">
-    
+<section class="relative w-full h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-slate-900">
     <div class="absolute inset-0 z-0">
         <Image 
-        src={heroData.backgroundImage} 
-        alt="Background"
-        width={1920}
-        height={1080}
-        format="webp"
-        loading="eager"
-        fetchpriority="high"
-        widths={[360, 720, 1200, 1920]}
-        sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1200px) 1200px, 1920px`}
-        class="w-full h-full object-cover opacity-60"
+            src={heroData.backgroundImage} 
+            alt="Fondo Global Lampei"
+            width={1920}
+            height={1080}
+            format="webp"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-full object-cover opacity-50 scale-105 animate-slow-zoom"
         />
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/40 to-slate-900/80"></div>
     </div>
 
-    <div class="relative z-10 container mx-auto px-4 text-center">
-        
-        <div class="mb-6 animate-fade-in-up opacity-0" style="animation-delay: 0.1s;">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/20 text-blue-100 border border-blue-400/30 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-                Welcome to Lampei
+    <div class="relative z-10 container mx-auto px-6 text-center">
+        <div class="mb-8 animate-fade-in opacity-0" style="animation-delay: 0.2s;">
+            <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 text-blue-300 border border-white/20 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur-md">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                International Mission
             </span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up opacity-0 font-serif" style="animation-delay: 0.3s;">
+        <h1 class="text-5xl md:text-8xl font-bold text-white mb-8 leading-[1.1] animate-fade-in-up opacity-0 font-serif tracking-tight" style="animation-delay: 0.4s;">
             {heroData.title} <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 italic">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 italic font-light">
                 {heroData.titleHighlight}
             </span>
         </h1>
 
-        <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up opacity-0" style="animation-delay: 0.5s;">
+        <p class="text-lg md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up opacity-0" style="animation-delay: 0.6s;">
             {heroData.description}
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up opacity-0" style="animation-delay: 0.7s;">
-            <a href={heroData.primaryButton.href} class="btn btn-primary btn-lg border-none bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-900/20 rounded-full px-8">
-                {heroData.primaryButton.text}
+        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center animate-fade-in-up opacity-0" style="animation-delay: 0.8s;">
+            <a href={heroData.primaryButton.href} 
+               class="group relative overflow-hidden btn btn-primary btn-lg border-none bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-500/20 rounded-full px-10 transition-all duration-300 hover:scale-105">
+                <span class="relative z-10">{heroData.primaryButton.text}</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </a>
             
-            <a href={heroData.secondaryButton.href} class="btn btn-outline btn-lg text-white hover:bg-white/10 hover:text-white border-white/40 rounded-full px-8 backdrop-blur-sm">
+            <a href={heroData.secondaryButton.href} 
+               class="btn btn-outline btn-lg text-white hover:bg-white/10 border-white/30 rounded-full px-10 backdrop-blur-sm transition-all duration-300 hover:border-white">
                 {heroData.secondaryButton.text}
             </a>
         </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-slow flex flex-col items-center gap-2">
+        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Explore</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
     </div>
@@ -60,16 +65,19 @@ import { Image } from 'astro:assets';
 
 <style>
     @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade-in-up {
-        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
+    @keyframes slowZoom {
+        from { transform: scale(1); }
+        to { transform: scale(1.1); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .animate-fade-in { animation: fadeIn 1.2s ease-out forwards; }
+    .animate-slow-zoom { animation: slowZoom 20s linear infinite alternate; }
+    .animate-bounce-slow { animation: bounce 3s infinite; }
 </style>

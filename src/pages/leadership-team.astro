@@ -2,18 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/common/PageHeader.astro';
 import TeamGrid from '../components/team/TeamGrid.jsx';
-import { teamData } from '../data/team';
+import { teamData } from '../data/team'; //
 ---
 
-<Layout title="Leadership Team | Lampei International Ministries">
-    <main>
-        <PageHeader 
-            title={teamData.title} 
-            subtitle={teamData.subtitle} 
-            backgroundImage={teamData.headerImage}
-        />
+<Layout title="Leadership Team | Lampei">
+  <PageHeader 
+    title="Our Leadership" 
+    subtitle="The visionaries and pastors leading Lampei's global mission."
+  />
 
-        <TeamGrid client:load members={teamData.members} />
-        
-    </main>
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <TeamGrid client:visible members={teamData} />
+    </div>
+  </section>
 </Layout>

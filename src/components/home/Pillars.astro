@@ -1,8 +1,8 @@
 ---
+// src/components/home/Pillars.astro
 import { pillarsData } from '../../data/home';
 import { Church, Users, BookOpen, ArrowRight } from 'lucide-react';
 
-// Mapeo de iconos (String -> Componente)
 const icons = {
   church: Church,
   users: Users,
@@ -10,32 +10,39 @@ const icons = {
 };
 ---
 
-<section class="relative z-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-24">
+<section class="relative z-30 px-6 lg:px-8 -mt-16 mb-32">
   <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-10">
       
-      {pillarsData.map((pillar) => {
+      {pillarsData.map((pillar, index) => {
         const IconComponent = icons[pillar.icon as keyof typeof icons];
         
         return (
-          <div class="card bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100">
-            <div class="card-body">
-              <div class={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${pillar.color}`}>
-                <IconComponent className="w-7 h-7" />
+          <div 
+            class="group relative bg-white rounded-[2rem] p-8 shadow-2xl shadow-slate-200/50 hover:shadow-blue-900/10 transition-all duration-500 hover:-translate-y-3 border border-slate-100 overflow-hidden"
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            <div class={`absolute -right-8 -top-8 w-32 h-32 rounded-full opacity-5 group-hover:opacity-10 transition-opacity ${pillar.color.split(' ')[0]}`}></div>
+            
+            <div class="relative z-10">
+              <div class={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-inner ${pillar.color}`}>
+                <IconComponent className="w-8 h-8" />
               </div>
               
-              <h3 class="card-title text-2xl font-serif text-slate-900 mb-2">
+              <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif tracking-tight group-hover:text-primary transition-colors">
                 {pillar.title}
               </h3>
               
-              <p class="text-slate-600 leading-relaxed mb-4">
+              <p class="text-slate-500 leading-relaxed mb-8 text-lg">
                 {pillar.description}
               </p>
               
-              <div class="card-actions justify-end">
-                <a href={pillar.link} class="btn btn-link px-0 text-slate-900 hover:text-primary group no-underline">
-                  Saber más 
-                  <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+              <div class="flex items-center">
+                <a href={pillar.link} class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-primary group/link transition-colors">
+                  <span class="mr-2">Learn More</span>
+                  <div class="p-2 rounded-full border border-slate-200 group-hover/link:border-primary group-hover/link:bg-primary group-hover/link:text-white transition-all">
+                    <ArrowRight className="w-4 h-4 transform group-hover/link:translate-x-0.5 transition-transform" />
+                  </div>
                 </a>
               </div>
             </div>

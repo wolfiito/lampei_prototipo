@@ -1,23 +1,30 @@
 ---
-// 1. Importamos el componente React
-import TestimonialsSlider from './TestimonialsSlider.jsx';
-
-// 2. Importamos LOS DATOS REALES (Tu archivo TS)
 import { testimonialsData } from '../../data/home';
+import TestimonialsSlider from './TestimonialsSlider.jsx';
 ---
 
-<section class="py-24 bg-slate-50 relative overflow-hidden">
-  {/* ... (Tu fondo y títulos siguen igual) ... */}
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold font-serif text-slate-900 mb-4">
-        Voices of Impact
+<section class="py-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-serif">
+        Proven Track Record
       </h2>
-      {/* ... */}
+      <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+      <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
+        What leaders and partners are saying about the impact of Lampei International Ministries.
+      </p>
     </div>
 
-    <TestimonialsSlider client:visible data={testimonialsData} />
-
+    <TestimonialsSlider client:visible testimonials={testimonialsData} />
   </div>
 </section>
+
+<style is:global>
+  /* Personalización de los puntos del slider para que sean "preciosos" */
+  .swiper-pagination-bullet-active {
+    background: #1e40af !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease;
+  }
+</style>
