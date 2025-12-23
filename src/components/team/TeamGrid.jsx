@@ -1,44 +1,42 @@
-import React from 'react';
-import { Mail, Globe, Instagram } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, X } from 'lucide-react';
 
 export default function TeamGrid({ members }) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {members.map((member, index) => (
-        <div key={index} className="group relative">
-          {/* Contenedor de Imagen con Efecto */}
-          <div className="relative overflow-hidden rounded-[2.5rem] aspect-[4/5] mb-6 shadow-2xl shadow-slate-200">
-            <img 
-              src={member.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop'} 
-              alt={member.name}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-            />
-            
-            {/* Overlay de Redes Sociales al Hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8 gap-4">
-              <a href="#" className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
-                <Mail size={20} />
-              </a>
-              <a href="#" className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-blue-600 transition-all">
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
+  // GUARD CLAUSE: Si members no es un array, mostramos un error amigable o nada
+  if (!Array.isArray(members)) {
+    console.error("TeamGrid: 'members' prop must be an array", members);
+    return null;
+  }
 
-          {/* Información del Miembro */}
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-slate-900 font-serif mb-1 group-hover:text-blue-600 transition-colors">
-              {member.name}
-            </h3>
-            <p className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-3">
-              {member.role}
-            </p>
-            <p className="text-slate-500 text-sm leading-relaxed max-w-[250px] mx-auto">
-              {member.bio || "Dedicated to serving the nations through biblical leadership."}
-            </p>
-          </div>
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  return (
+    <section className="py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {members.map((member, index) => (
+            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group flex flex-col h-full">
+              {/* ... resto del código del componente ... */}
+              <div className="h-64 overflow-hidden relative">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-slate-900 font-serif mb-1">{member.name}</h3>
+                <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4">{member.role}</p>
+                <p className="text-slate-600 mb-6 line-clamp-4 leading-relaxed">{member.fullBio || member.bio}</p>
+                <div className="pt-6 border-t border-slate-100 mt-auto">
+                   <button onClick={() => setSelectedMember(member)} className="text-blue-600 font-bold text-sm hover:underline">Read Bio</button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+      {/* ... Modal Logic ... */}
+    </section>
   );
 }
