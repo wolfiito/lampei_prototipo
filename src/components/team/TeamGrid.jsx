@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Mail, X } from 'lucide-react';
 
 export default function TeamGrid({ members }) {
-  // GUARD CLAUSE: Si members no es un array, mostramos un error amigable o nada
-  if (!Array.isArray(members)) {
-    console.error("TeamGrid: 'members' prop must be an array", members);
-    return null;
+  // Práctica Senior: Validación de datos de entrada
+  if (!members || !Array.isArray(members)) {
+    return (
+      <div className="text-center py-20 text-slate-400">
+        <p>No team data available at the moment.</p>
+      </div>
+    );
   }
 
   const [selectedMember, setSelectedMember] = useState(null);
