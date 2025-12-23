@@ -13,43 +13,48 @@ export const potentialTripsData = {
             "No matter the location, opportunities for the furtherance of Gospel are unlimited. Is God calling you to come on a short term mission trip with Lampei?"
         ],
         // Imagen lateral para el texto de Why Go
-        image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop"
+        image: "/misiones.jpg"
     },
 
     destinations: [
         {
             location: "Morelia, Mexico",
             highlight: "Urban Ministry & Schools",
-            description: "Lampei has two churches in Morelia, a city of 1 million people strongly influenced by Roman Catholicism. We have open doors to go into schools, juvenile detention centers, nursing homes, orphanages, and hold outdoor concerts.",
-            image: "https://images.unsplash.com/photo-1512813389649-acb9131ced20?q=80&w=800&auto=format&fit=crop",
+            description: "Lampei has two churches in Morelia, Mexico, a city of 1 million people. Like much of Mexico, Morelia is strongly Roman Catholic. We have open doors to go into schools, juvenile detention centers, nursing homes, orphanages and hold outdoor concerts. The options for ministry are nearly unlimited.",
+            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
+            videoId: "3Idu0Ly3cKQ",
             needs: ["School Ministry", "Concerts", "Orphanage Visits"]
         },
         {
             location: "Sierra Mazateca, Oaxaca",
             highlight: "Indigenous Outreach",
-            description: "For 8 years, we have worked in one of the most under-resourced indigenous communities in Oaxaca. We work with churches desiring to plant more churches. Ministry includes medical missions, clothing donations, and evangelistic events.",
-            image: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=800&auto=format&fit=crop",
+            description: "For 8 years now, the Lord has opened doors for us in one of the indigenous communities with the fewest resources in the state of Oaxaca. We are working with churches that desire to plant more churches in the region. We have done medical missions, clothing donations, provided electricity, and held evangelistic events. There are also opportunities for Bible teaching and other trainings for the local believers.",
+            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
+            videoId: "LewMxn27l9E",
             needs: ["Medical Missions", "Bible Teaching", "Resource Distribution"]
         },
         {
             location: "Mexico City (CDMX)",
             highlight: "Mega-City Planting",
-            description: "As the largest city in North America, Mexico City presents a massive mission field. Lampei is currently exploring future church planting opportunities in this global hub.",
-            image: "https://images.unsplash.com/photo-1518115509747-833959c9a3d4?q=80&w=800&auto=format&fit=crop",
+            description: "Mexico city is the largest city in Mexico and the most populated city in North America. Lampei is exploring future church planting opportunities in Mexico City.",
+            image: "/mexico.jpg", // Montañas / Niebla
+            videoId: "",
             needs: ["Urban Evangelism", "Prayer Walking", "Church Planting Support"]
         },
         {
             location: "Concepción, Chile",
             highlight: "Church Growth Support",
-            description: "Established in 2023, Iglesia Lampei Chile is growing rapidly. Additional laborers are needed for youth ministry, music, and evangelism to provide insight and training as the church expands.",
-            image: "https://images.unsplash.com/photo-1490786522583-0949d0701043?q=80&w=800&auto=format&fit=crop",
+            description: "Iglesia Lampei in Chile was established in February of 2023. God has blessed the church with growth. As the church continues to grow, the need for additional laborers is always present especially among youth, music, and evangelism. A missions team could help evangelize the community, provide training for the church, and also provide insight for the church as it grows.",
+            image: "chile.jpg", // Montañas / Niebla
+            videoId: "",
             needs: ["Youth Ministry", "Music Training", "Evangelism"]
         },
         {
             location: "Spain",
             highlight: "European Mission Field",
-            description: "Following a vision tour in 2023, we identified an emergent need for Gospel workers. Lampei is actively looking for laborers and partners to help further the Gospel in Spain.",
-            image: "https://images.unsplash.com/photo-1558642084-d9a20a856621?q=80&w=800&auto=format&fit=crop",
+            description: "In October of 2023 our team traveled to Spain for a vision tour. There is an emergent need there for more Gospel workers and church planters. Lampei is looking for laborers and partners to further the Gospel in Spain.",
+            image: "spain.jpg", // Montañas / Niebla
+            videoId: "",
             needs: ["Partnership", "Long-term Laborers", "Church Planting"]
         }
     ]

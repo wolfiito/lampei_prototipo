@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import VideoPlayer from '../components/common/VideoPlayer.jsx'; // Importar VideoPlayer
+import { musicData } from '../data/music';
+import { Music as MusicIcon, Mic2, Users, Play, Radio } from 'lucide-react';
+
+const iconMap = { /* ... igual ... */ };
+---
+
+<Layout title="Lampei Music | Worship & Missions">
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-900 font-serif">Featured Worship & Concerts</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-500 mt-6 max-w-2xl mx-auto">Experience the sound of Lampei Music. From intimate worship sessions to large-scale evangelistic events.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        {musicData.videos.map((video) => (
+          <div class="group">
+            <div class="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl mb-8 border-4 border-white">
+              {/* Usamos client:visible para que el video solo cargue cuando se vea */}
+              <VideoPlayer 
+                client:visible 
+                id={video.id} 
+                title={video.title} 
+                poster={video.thumbnail} 
+              />
+            </div>
+            <div class="text-center lg:text-left">
+              <h3 class="text-2xl font-bold text-slate-900 font-serif mb-2 flex items-center gap-2 justify-center lg:justify-start">
+                <Play size={20} className="text-blue-600 fill-current" />
+                {video.title}
+              </h3>
+              <p class="text-slate-600 leading-relaxed">{video.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  </Layout>

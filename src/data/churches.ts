@@ -10,7 +10,7 @@ export const churchesPageData = {
             location: "Morelia, Mexico",
             founded: "Jan 2019",
             leader: "Pastor David Garcia",
-            description: "Located in a city of one million people, this church is thriving and holds two services weekly.",
+            description: "In January of 2019 Pastor David Garcia planted Lampei Church in Morelia Mexico, a city of one million people. The church is thriving and holds two services weekly.",
             image: "/lampeilomas.jpg", // Morelia vibe
             status: "Established",
             statusColor: "bg-emerald-100 text-emerald-700"
@@ -20,7 +20,7 @@ export const churchesPageData = {
             location: "North Morelia, Mexico",
             founded: "Late 2021",
             leader: "Leadership Team",
-            description: "Planted in one of the most difficult areas in Morelia where there was previously no church. It has shown to be quite receptive to the Gospel.",
+            description: "At the end of 2021 Lampei began a new church in the northern area of Morelia. Lampei Canterras is in one of the most difficult areas in Morelia, but has shown to be quite receptive to the Gospel. There was previously no church in the area",
             image: "/lampeicanterras.jpg", 
             status: "Growing",
             statusColor: "bg-blue-100 text-blue-700"
@@ -30,7 +30,7 @@ export const churchesPageData = {
             location: "Concepción, Chile",
             founded: "Jan 2022",
             leader: "Pastor Alan Pena",
-            description: "A work started in a challenging atmosphere. The Peña family is trusting the Lord to sustain and continue this work in South America.",
+            description: "In January 2022 Lampei sponsored the start of a new church in Chile. Pastor Alan Pena moved to Concepcion, Chile to lead this work. The atmosphere is challenging, but the Pena’s are trusting the Lord to sustain and continue this work.",
             image: "/lampeichile.jpg", // Chile vibe
             status: "International",
             statusColor: "bg-indigo-100 text-indigo-700"
@@ -40,7 +40,7 @@ export const churchesPageData = {
             location: "Querétaro, Mexico",
             founded: "2018 (Joined Lampei recently)",
             leader: "Ramirez Family",
-            description: "Originally planted by the Ramirez family, they have recently joined our Lampei network and will continue laboring for the Gospel in their region.",
+            description: "The Ramirez family began planting a church in San Nicolas, Queretaro, Mexico in 2018. Recently they have joined our Lampei network and will continue laboring for the Gospel in their region.",
             image: "/lampeisannicolas.jpg", // Queretaro vibe
             status: "Network Partner",
             statusColor: "bg-purple-100 text-purple-700"
@@ -50,7 +50,7 @@ export const churchesPageData = {
             location: "CDMX, Mexico",
             founded: "Aug 2025",
             leader: "Armando & Pena Family",
-            description: "Armando, previously a pastor in Morelia, moved to the capital to plant Lampei CDMX in one of the largest cities in the world.",
+            description: "In August of 2025, the Pena family moved to Mexico City to Plant Lampei CDMX (Mexico City). Armando was previously a pastor at Lampei church in Morelia.",
             image: "/lampeicdmx.jpg", // CDMX vibe
             status: "New Plant",
             statusColor: "bg-amber-100 text-amber-800"

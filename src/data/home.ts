@@ -23,24 +23,24 @@ export const heroData = {
 export const pillarsData = [
     {
         title: "Church Planting",
-        description: "Establishing healthy faith communities in Mexico, Chile, and beyond.",
+        description: "The primary purpose of Lampei International Ministries is church multiplication. We currently have churches in Mexico and Chile. The Lord is opening more doors and we expect to see God start more churches through our ministry.",
         icon: "church",
         color: "bg-blue-100 text-blue-600",
         link: "/our-churches"
     },
     {
         title: "Leadership",
-        description: "Equipping and training the next generation of pastors and missionaries.",
+        description: "We offer a church planting residency program for those interested in becoming a church planter or desiring to be part of a church plant through Lampei.",
         icon: "users",
         color: "bg-indigo-100 text-indigo-600",
-        link: "/leadership-team"
+        link: "/leadership-training"
     },
     {
-        title: "Education",
-        description: "Providing solid biblical foundations and tools for spiritual growth.",
+        title: "Christian Schools",
+        description: "Having a strong education is important. However, having a strong Biblical education is even more important. That is why we established our Christian schools to help train the youth in our churches that faith applies to every area of life. Our goal is to train our students to be faithful witnesses and have a strong Biblical worldview.",
         icon: "book",
         color: "bg-teal-100 text-teal-600",
-        link: "/doctrine"
+        link: "/schools"
     }
     // ... (al final del archivo, después de pillarsData)
     ]

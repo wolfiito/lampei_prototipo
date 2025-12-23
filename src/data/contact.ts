@@ -10,11 +10,11 @@ export const contactData = {
             line2: "Pownal, VT 05261",
             country: "USA"
         },
-        email: "contact@lampeiministries.org",
+        email: "m.carrel@lampeiministries.org",
         phone: "+1 (555) 123-4567", // (Opcional, si no tienen no se muestra)
         socials: {
-            facebook: "#",
-            instagram: "#"
+            facebook: "https://www.facebook.com/profile.php?id=100095093662017",
+            instagram: "https://www.instagram.com/iglesialampei/?hl=es-la"
         }
     },
 

@@ -19,7 +19,7 @@ export const ministriesData = {
             description: "We offer a church planting residency program for those interested in becoming a church planter or desiring to be part of a church plant through Lampei.",
             image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop", // Mentoria / Enseñando
             icon: "users",
-            link: "/residency", // Página futura
+            link: "/leadership-training", // Página futura
             buttonText: "More Info",
             isComingSoon: false
         },

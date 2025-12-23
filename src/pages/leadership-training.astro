@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+import { residencyData } from '../data/leadership';
+import { Sparkles, Church, FileText, Users, MapPin, ClipboardCheck, Download, ArrowRight } from 'lucide-react';
+
+const iconMap = {
+  sparkles: Sparkles,
+  church: Church,
+  'file-text': FileText,
+  users: Users,
+  'map-pin': MapPin,
+  'clipboard-check': ClipboardCheck
+};
+---
+
+<Layout title="Leadership Training | Lampei International">
+  <PageHeader 
+    title="Church Planting Residency" 
+    subtitle="A one-year immersive training program in the heart of Morelia, Mexico."
+    backgroundImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071"
+  />
+
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-slate-900 mb-8 font-serif">{residencyData.title}</h2>
+      <p class="text-xl text-slate-600 leading-relaxed mb-12">
+        {residencyData.intro}
+      </p>
+      <div class="p-10 bg-blue-50 rounded-[2.5rem] border border-blue-100 text-left">
+        <h3 class="text-2xl font-bold text-blue-900 mb-4 font-serif">What is the Residency program?</h3>
+        <p class="text-slate-700 leading-relaxed">{residencyData.description}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-900 font-serif">Requirements to Apply</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {residencyData.requirements.map((req) => {
+          const Icon = iconMap[req.icon as keyof typeof iconMap];
+          return (
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+              <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                <Icon size={24} />
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif">{req.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-grow">{req.text}</p>
+              
+              {req.hasDownload && (
+                <a href="https://www.lampeiministries.org/_files/ugd/ee6d9b_394ff3bc9ed24ed9958b23855a644d73.pdf" class="btn btn-outline btn-sm rounded-full gap-2 border-blue-200 text-blue-600 hover:bg-blue-600 hover:border-blue-600">
+                  <Download size={14} /> Download Form
+                </a>
+              )}
+              
+              {req.hasApply && (
+                <a href="https://forms.gle/shsTgr8sY8Lbqf49A" class="btn btn-primary btn-sm rounded-full gap-2 bg-blue-600 border-none">
+                  Apply Now <ArrowRight size={14} />
+                </a>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+</Layout>
