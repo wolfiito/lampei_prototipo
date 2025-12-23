@@ -23,11 +23,13 @@ interface Destination {
         {trip.videoId ? (
           <VideoPlayer client:visible id={trip.videoId} title={trip.location} poster={trip.image} />
         ) : (
-          <img 
+        <img 
             src={trip.image} 
             alt={trip.location} 
+            loading="lazy" 
+            decoding="async"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
+            />
         )}
         <div class="absolute top-4 left-4 z-20 bg-blue-600 text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
           {trip.highlight}
