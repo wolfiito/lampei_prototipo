@@ -1,8 +1,11 @@
 ---
+// src/components/trips/TripsGrid.astro
 import { tripsPageData } from '../../data/trips';
 import { MapPin, Users, CheckCircle2 } from 'lucide-react';
 import VideoPlayer from '../common/VideoPlayer.jsx';
-import { Image } from 'astro:assets';
+
+// Práctica Senior: Eliminamos el import de 'astro:assets' para imágenes remotas
+// para evitar que el build falle si un link de Unsplash devuelve 404.
 ---
 
 <section class="py-24 bg-slate-50">
@@ -12,6 +15,7 @@ import { Image } from 'astro:assets';
             {tripsPageData.trips.map((trip) => (
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 flex flex-col md:flex-row">
                     
+                    {/* Contenedor de Media (Imagen o Video) */}
                     <div class="md:w-2/5 h-64 md:h-auto relative bg-slate-100">
                         
                         {trip.videoId ? (
@@ -25,17 +29,15 @@ import { Image } from 'astro:assets';
                                 />
                             </div>
                         ) : (
-                            /* CASO 2: ES IMAGEN (Usamos Image de Astro optimizada) */
+                            /* CASO 2: ES IMAGEN (Usamos img nativa para resiliencia) */
                             <div class="h-full w-full relative overflow-hidden group">
                                 <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10"></div>
                                 
-                                <Image 
-                                    // src={trip.image} 
+                                <img 
+                                    src={trip.image} 
                                     alt={trip.location}
-                                    width={800}
-                                    height={600}
-                                    format="webp"
                                     loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                                 
@@ -50,6 +52,7 @@ import { Image } from 'astro:assets';
 
                     </div>
 
+                    {/* Contenido del Viaje */}
                     <div class="p-8 md:p-10 md:w-3/5 flex flex-col justify-center">
                         
                         <div class="flex items-center gap-2 mb-3 text-slate-500 text-sm font-medium">
