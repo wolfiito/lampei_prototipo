@@ -50,27 +50,27 @@ export const pillarsData = [
         author: "Dr. Mark Ballard",
         role: "President Northeastern Baptist College",
         location: "",
-        image: "../../../public/mark.jpg"
+        image: "/mark.jpg"
     },
     {
         quote: "There are a few times in our lives when God clearly and distinctly speaks to us about specific ministries.  Recently, I visited the churches of Lampei International Ministries in Morelia, Mexico, and clearly heard the Spirit of God speak into my heart.  The vision of this ministry for evangelism, education, and worship ranks at the very top of those ministries I have seen in my lifetime.  Lampei is doing it right, according to the Biblical pattern.  My endorsement of their project is without qualification",
         author: "Dr. Lee Williams",
         role: "Senior Vice President Northeastern Baptist College",
         location: "",
-        image: "../../../public/lee.jpg"
+        image: "/lee.jpg"
     },
     {
         quote: "LIM is an exceptional church planting ministry that is effectively reaching the lost with the gospel, equipping the saints to do the ministry, and sending missionaries out to plant new churches around the world. They are only getting started.",
         author: "Jeremy Doyle",
         role: "Missions Pastor Valley Baptist Church Bakersfield, CA",
         location: "",
-        image: "../../../public/jeremy.jpg"
+        image: "/jeremy.jpg"
     },
     {
         quote: "I have been a missionary in El Salvador for 38 years, working in evangelism and church planting. From March 16-17, 2023, I had the privilege of working with Lampei Church in Morelia, Mexico and saw God work in amazing ways as we reached out in different schools and neighborhoods. We saw hundreds of people come to know Jesus Christ! We were even able to share the Gospel through a scientific presentation of Intelligent Design in a local university and it was wonderful to see dozens of the students pray to receive Christ. I highly recommend the LIM and their leadership for an exciting opportunity to reach people with the Gospel. They are doing a great job reaching Morelia, Mexico!",
         author: "Steve Kern",
         role: "Director Good News in Action",
         location: "",
-        image: "../../../public/steve.jpg"
+        image: "/steve.jpg"
     }
 ];

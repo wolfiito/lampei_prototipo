@@ -11,7 +11,7 @@ export const churchesPageData = {
             founded: "Jan 2019",
             leader: "Pastor David Garcia",
             description: "Located in a city of one million people, this church is thriving and holds two services weekly.",
-            image: "../../../public/lampeilomas.jpg", // Morelia vibe
+            image: "/lampeilomas.jpg", // Morelia vibe
             status: "Established",
             statusColor: "bg-emerald-100 text-emerald-700"
         },
@@ -21,7 +21,7 @@ export const churchesPageData = {
             founded: "Late 2021",
             leader: "Leadership Team",
             description: "Planted in one of the most difficult areas in Morelia where there was previously no church. It has shown to be quite receptive to the Gospel.",
-            image: "../../../public/lampeicanterras.jpg", 
+            image: "/lampeicanterras.jpg", 
             status: "Growing",
             statusColor: "bg-blue-100 text-blue-700"
         },
@@ -31,7 +31,7 @@ export const churchesPageData = {
             founded: "Jan 2022",
             leader: "Pastor Alan Pena",
             description: "A work started in a challenging atmosphere. The Peña family is trusting the Lord to sustain and continue this work in South America.",
-            image: "../../../public/lampeichile.jpg", // Chile vibe
+            image: "/lampeichile.jpg", // Chile vibe
             status: "International",
             statusColor: "bg-indigo-100 text-indigo-700"
         },
@@ -41,7 +41,7 @@ export const churchesPageData = {
             founded: "2018 (Joined Lampei recently)",
             leader: "Ramirez Family",
             description: "Originally planted by the Ramirez family, they have recently joined our Lampei network and will continue laboring for the Gospel in their region.",
-            image: "../../../public/lampeisannicolas.jpg", // Queretaro vibe
+            image: "/lampeisannicolas.jpg", // Queretaro vibe
             status: "Network Partner",
             statusColor: "bg-purple-100 text-purple-700"
         },
@@ -51,7 +51,7 @@ export const churchesPageData = {
             founded: "Aug 2025",
             leader: "Armando & Pena Family",
             description: "Armando, previously a pastor in Morelia, moved to the capital to plant Lampei CDMX in one of the largest cities in the world.",
-            image: "../../../public/lampeicdmx.jpg", // CDMX vibe
+            image: "/lampeicdmx.jpg", // CDMX vibe
             status: "New Plant",
             statusColor: "bg-amber-100 text-amber-800"
         },
@@ -61,7 +61,7 @@ export const churchesPageData = {
             founded: "Launching Jan 2026",
             leader: "Missionary Team",
             description: "Following an exploratory trip in 2023, we recognized a great spiritual need. We will be sending a team from Mexico to plant a church in Europe.",
-            image: "../../../public/lampeiespaña.jpg", // Spain vibe
+            image: "/lampeiespaña.jpg", // Spain vibe
             status: "Future Project",
             statusColor: "bg-rose-100 text-rose-700"
         }
