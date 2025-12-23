@@ -64,13 +64,13 @@ export interface MusicVideo {
         id: "PhdfwdLlsT8", // Sustituye por el ID real del video de Lampei
         title: "Lampei Worship Live",
         description: "Experience a night of worship with our team in Morelia, Mexico.",
-        thumbnail: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop"
+        thumbnail: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop"
       },
       {
         id: "7JnODPfsjVs", // Sustituye por el ID real del video de Lampei
         title: "Music & Missions",
         description: "See how we use music as a tool to plant churches and reach new communities.",
-        thumbnail: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop"
+        thumbnail: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop"
       }
     ]
   };

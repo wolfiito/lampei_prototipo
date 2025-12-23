@@ -9,7 +9,7 @@ export const tripsPageData = {
             location: "Sierra Mazateca, Oaxaca, Mexico",
             team: "Lampei Church Morelia Team",
             description: "On this trip, the missions team ventured into the mountains of Oaxaca. They ministered to the community through practical service and spiritual support, leaving a lasting impact on the region.",
-            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
+            image: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
             videoId: "s0VoQuYD07o",
             activities: ["Sports Camps", "Door-to-door Evangelism", "Medical Clinic", "Church Strengthening"]
         },
@@ -17,7 +17,7 @@ export const tripsPageData = {
             location: "Morelia, Mexico",
             team: "North Pownal (VT) & Valley Baptist (CA)",
             description: "North Pownal Church in Pownal, VT and Valley Baptist Church in Bakersfield, CA went to Morelia, Mexico. The team shared the Gospel in schools and colleges, taught in the Christian school, and held a large evangelistic event in the town center. Many people were saved during this trip.",
-            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Morelia Colonial
+            image: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop", // Morelia Colonial
             videoId: "DBawwVDsm5A",
             activities: ["School Ministry", "Christian Teaching", "Town Center Evangelism", "Gospel Outreach"]
         },
@@ -25,7 +25,7 @@ export const tripsPageData = {
             location: "Concepción, Chile",
             team: "Lampei Morelia & Vermont Team",
             description: "A team from Lampei Church in Morelia, Mexico and Vermont traveled to assist a Lampei church plant for thier first year anniversary. Relationships were strengthened and the Gospel was shared.",
-            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Chile / Montañas
+            image: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop", // Chile / Montañas
             activities: ["Anniversary Celebration", "Relational Ministry", "Church Support", "Evangelism"]
         },
         {
