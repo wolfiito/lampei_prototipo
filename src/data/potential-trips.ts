@@ -21,7 +21,7 @@ export const potentialTripsData = {
             location: "Morelia, Mexico",
             highlight: "Urban Ministry & Schools",
             description: "Lampei has two churches in Morelia, Mexico, a city of 1 million people. Like much of Mexico, Morelia is strongly Roman Catholic. We have open doors to go into schools, juvenile detention centers, nursing homes, orphanages and hold outdoor concerts. The options for ministry are nearly unlimited.",
-            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
+            image: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
             videoId: "3Idu0Ly3cKQ",
             needs: ["School Ministry", "Concerts", "Orphanage Visits"]
         },
@@ -29,7 +29,7 @@ export const potentialTripsData = {
             location: "Sierra Mazateca, Oaxaca",
             highlight: "Indigenous Outreach",
             description: "For 8 years now, the Lord has opened doors for us in one of the indigenous communities with the fewest resources in the state of Oaxaca. We are working with churches that desire to plant more churches in the region. We have done medical missions, clothing donations, provided electricity, and held evangelistic events. There are also opportunities for Bible teaching and other trainings for the local believers.",
-            image: "https://images.unsplash.com/photo-1565619579083-96b637955b25?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
+            image: "https://images.unsplash.com/photo-1585464233364-285d13ef0433?q=80&w=800&auto=format&fit=crop", // Montañas / Niebla
             videoId: "LewMxn27l9E",
             needs: ["Medical Missions", "Bible Teaching", "Resource Distribution"]
         },
